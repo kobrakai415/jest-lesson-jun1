@@ -3,6 +3,7 @@ import supertest from "supertest"
 import server from "../src/server"
 import mongoose from "mongoose"
 import ProductModel from "../src/models/products/index.js"
+
 dotenv.config()
 
 const request = supertest(server)
@@ -21,13 +22,6 @@ describe("Stage I - Testing the test env", () => {
         expect(false).toBeFalsy()
     })
 
-    it("should expect that the test key is 123", () => {
-        console.log(process.env.TEST_KEY)
-        expect(process.env.TEST_KEY).toBeDefined()
-        expect(process.env.TEST_KEY).toBe("123")
-    })
-
-
 })
 
 describe("Checking application main endpoints", () => {
@@ -42,7 +36,7 @@ describe("Checking application main endpoints", () => {
         const response = await request.get("/products")
         expect(response.status).toBe(200)
         expect(response.body.products).toBeDefined()
-        expect(response.body.products.length).toBe(0)
+        
     })
 
     const validData = {

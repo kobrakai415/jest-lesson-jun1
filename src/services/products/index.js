@@ -7,6 +7,7 @@ const productsRouter = new Router()
 
 productsRouter.get("/", async (req, res) => {
     const products = await ProductModel.find({})
+    
     res.status(200).send({ products })
 })
 
