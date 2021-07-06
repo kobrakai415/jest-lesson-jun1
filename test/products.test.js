@@ -1,5 +1,8 @@
-describe("just another test suite", () => {
-    it("should test that another test file is not a problem", () => {
+
+
+describe("testing the products route", () => {
+
+    it("should return the prod", () => {
         expect(true).toBe(true)
     })
 })
